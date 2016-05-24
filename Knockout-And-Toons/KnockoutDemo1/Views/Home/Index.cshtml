@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+<h1>Toons</h1>
+<div style="float: left;margin-left:10px;">
+    <label>First Name</label>
+    <input data-bind="value: firstName, valueUpdate: 'afterkeydown', hasfocus: isFreshStart" />
+
+    <label>Last Name</label>
+    <input data-bind="value: lastName, valueUpdate: 'afterkeydown'" />
+
+    <div data-bind="visible: isFullNameVisible()">
+        <label>Full Name</label>
+        <span data-bind="text: fullName"></span>
+    </div>
+    <br />
+    <button data-bind="click: addToon">Add</button>
+</div>
+<div style="float: left; margin-left: 10px;">
+    <ul data-bind="foreach: toons">
+        <li data-bind="text: fullName"></li>
+    </ul>
+</div>
+<script src="~/Scripts/jquery-1.8.1.js"></script>
+<script src="~/Scripts/knockout-2.1.0.debug.js"></script>
+<script src="~/Scripts/person.js"></script>
